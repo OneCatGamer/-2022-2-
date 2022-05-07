@@ -2,16 +2,19 @@
 #include <cmath>
 using namespace std;
 
-int f(int n) {
-    if (n == 2)
-        return 1;
-    if (n == 0 || n == 1)
-        return 0;
-    return f(n - 1) + f(n - 2);
-}
 int main() {
-    int n;
+    int x1 = 0, x2 = 1, x3, n;
     cin >> n;
-    cout << f(n) << endl;
-    return 0;
+    if (n == 0 || n == 1) {
+        cout << 0;
+        return(0);
+    }
+    cout << 0 << endl << 1 << endl;
+    for (int f = 0; f < n - 2; f++) {
+        x3 = x1 + x2;
+        x1 = x2;
+        x2 = x3;
+        cout << x3 << endl;
+    }
+    return(0);
 }
